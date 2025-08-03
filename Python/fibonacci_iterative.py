@@ -6,16 +6,12 @@
 # n_th is found by adding n-1 and n-2 
 
 def fibonacci(n):
-    seq = [0,1]
     if n <= 0:
-        return seq[0]
-    if n == 1:
-        return seq[1]
-    for _ in range(n-1):
-        res = sum(seq)
-        seq[0] = seq[1]
-        seq[1] = res
-    return seq[1]
+        return 0
+    a, b = 0, 1
+    for _ in range(1, n):
+        a, b = b, a + b
+    return b
 
 def test(n):
     print(f"Fibonacchin n={n}: ans={fibonacci(n)}")

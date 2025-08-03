@@ -1,1 +1,14 @@
+Setup ref (for now) -->
+
+making venv
+`python -m venv venv`
+
+activate on unix
+`source ./venv/bin/activate`
+
+activate on wind
+`source ./venv/Scripts/activate`
+
+--
+
 Trying to determine how I am going to structure the playbook.
