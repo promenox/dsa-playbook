@@ -12,3 +12,8 @@ activate on wind
 --
 
 Trying to determine how I am going to structure the playbook.
+
+SORTING IDEAS:
+https://www.geeksforgeeks.org/dsa/sorting-algorithms/
+https://en.wikipedia.org/wiki/Sorting_algorithm
+
