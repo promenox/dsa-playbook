@@ -29,13 +29,3 @@ def max_val_cond(nums):
         if(num > max_):
             max_ = num
     return max_
-
-# -- testing --
-
-num_array = [7, 12, 9, 11, 3, -1] 
-
-print(min_val_built(num_array))
-print(min_val_cond(num_array))
-
-print(max_val_built(num_array))
-print(max_val_cond(num_array))

@@ -1,14 +1,36 @@
 # bubble sort implementation
 
-# test array
-test_array = [5, 1, 4, 2, 3]
+'''
+bubble sort ~ cookbook:
+    Precondition: we start with an array A of n comparable elements.
+    Loop invariant: after each pass, the largest remaining unsorted element 
+                    is placed at the end of the unsorted portion.
+    Termination: after n-1 passes, no unsorted portion remains.
+    Postcondition: array A is sorted in non-decreasing order.
+'''
 
-# solution arrays
-ascd_array = [1, 2, 3, 4, 5]
-dscd_array = [5, 4, 3, 2, 1]
-
-# working on imp.
-def bubble_sort(nums):
-    for i in len(nums):
-        for j in nums:
+# ascending sort
+def bubble_sort_ascd(nums):
+    n = len(nums)
+    for i in range(n - 1):
+        swap = False
+        for j in range(n - 1 - i):
+            if nums[j] > nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
+                swap = True
+        if not swap:
             break
+    return nums
+
+# descending sort
+def bubble_sort_dscd(nums):
+    n = len(nums)
+    for i in range(n - 1): # outer loop cached at n-1 
+        swap = False # to esc for optimization
+        for j in range(n - 1 - i): # inner loop shrinks
+            if nums[j] < nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
+                swap = True
+        if not swap:
+            break
+    return nums

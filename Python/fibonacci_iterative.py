@@ -12,8 +12,3 @@ def fibonacci(n):
     for _ in range(1, n):
         a, b = b, a + b
     return b
-
-def test(n):
-    print(f"Fibonacchin n={n}: ans={fibonacci(n)}")
-
-test(9)
