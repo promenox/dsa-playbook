@@ -4,10 +4,10 @@
 bubble sort ~ cookbook:
     Precondition: we start with an array A of n comparable elements.
 
-    Loop invariant (ascending): after k passes, the last k elements of A 
+    Loop invariant (ascending): after k passes, the last k elements of A
         are the largest k elements in sorted (non-decreasing) order.
 
-    Loop invariant (descending): after k passes, the last k elements of A 
+    Loop invariant (descending): after k passes, the last k elements of A
         are the smallest k elements in sorted (non-increasing) order.
 
     Termination: after n-1 passes, all elements are in their correct position.

@@ -1,8 +1,8 @@
 import unittest
 
 # 1) fibonacci
-from  fibonacci_recursive import fibonacci as fib_recu
-from  fibonacci_iterative import fibonacci as fib_iter
+from fibonacci_recursive import fibonacci as fib_recu
+from fibonacci_iterative import fibonacci as fib_iter
 
 # 2) max / min val arrays
 import val_array
@@ -46,24 +46,38 @@ class TestDSA(unittest.TestCase):
 
     # test array
     test_array = [5, 1, 4, 2, 3]
+    ascd_array = [1, 2, 3, 4, 5]
+    dscd_array = [5, 4, 3, 2, 1]
 
     # bubble sort
     # ascending
     def test_bubble_sort_ascd(self):
-        self.assertEqual(bubble_sort.bubble_sort_ascd(self.test_array), [1, 2, 3, 4, 5])
+        self.assertEqual(
+            bubble_sort.bubble_sort_ascd(self.test_array),
+            self.ascd_array
+        )
 
     # descending
     def test_bubble_sort_dscd(self):
-        self.assertEqual(bubble_sort.bubble_sort_dscd(self.test_array), [5, 4, 3, 2, 1])
+        self.assertEqual(
+            bubble_sort.bubble_sort_dscd(self.test_array),
+            self.dscd_array
+        )
 
     # selection sort
     # ascending
     def test_selection_sort_ascd(self):
-        self.assertEqual(selection_sort.selection_sort_ascd(self.test_array), [1, 2, 3, 4, 5])
+        self.assertEqual(
+            selection_sort.selection_sort_ascd(self.test_array),
+            self.ascd_array
+        )
 
     # descending
     def test_selection_sort_dscd(self):
-        self.assertEqual(selection_sort.slection_sort_dscd(self.test_array), [5, 4, 3, 2, 1])
+        self.assertEqual(
+            selection_sort.slection_sort_dscd(self.test_array),
+            self.dscd_array
+        )
 
 
 if __name__ == "__main__":
