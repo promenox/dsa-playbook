@@ -10,6 +10,7 @@ import val_array
 # 3) sorting
 import bubble_sort
 import selection_sort
+import insertion_sort
 
 
 class TestDSA(unittest.TestCase):
@@ -49,7 +50,7 @@ class TestDSA(unittest.TestCase):
     ascd_array = [1, 2, 3, 4, 5]
     dscd_array = [5, 4, 3, 2, 1]
 
-    # bubble sort
+    # a. bubble sort
     # ascending
     def test_bubble_sort_ascd(self):
         self.assertEqual(
@@ -64,7 +65,7 @@ class TestDSA(unittest.TestCase):
             self.dscd_array
         )
 
-    # selection sort
+    # b. selection sort
     # ascending
     def test_selection_sort_ascd(self):
         self.assertEqual(
@@ -77,6 +78,15 @@ class TestDSA(unittest.TestCase):
         self.assertEqual(
             selection_sort.slection_sort_dscd(self.test_array),
             self.dscd_array
+        )
+
+    # at this point, i focus on ascd only
+
+    # c. insertion sort
+    def test_insertion_sort(self):
+        self.assertEqual(
+            insertion_sort.insertion_sort(self.test_array),
+            self.ascd_array
         )
 
 
