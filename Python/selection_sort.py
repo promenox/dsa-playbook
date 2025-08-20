@@ -35,7 +35,7 @@ def selection_sort_ascd(nums):
     return nums
 
 
-def slection_sort_dscd(nums):
+def selection_sort_dscd(nums):
     n = len(nums)
     for i in range(n - 1):
         min_idx = i
