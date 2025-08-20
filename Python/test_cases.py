@@ -11,6 +11,7 @@ import val_array
 import bubble_sort
 import selection_sort
 
+
 class TestDSA(unittest.TestCase):
     # -- testing fibonacci --
 
@@ -52,9 +53,10 @@ class TestDSA(unittest.TestCase):
         self.assertEqual(bubble_sort.bubble_sort_ascd(self.test_array), [1, 2, 3, 4, 5])
 
     # descending
-    def test_bubble_sort_ascd(self):
+    def test_bubble_sort_dscd(self):
         self.assertEqual(bubble_sort.bubble_sort_dscd(self.test_array), [5, 4, 3, 2, 1])
 
+    # selection sort
     # ascending
     def test_selection_sort_ascd(self):
         self.assertEqual(selection_sort.selection_sort_ascd(self.test_array), [1, 2, 3, 4, 5])
