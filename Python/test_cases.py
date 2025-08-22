@@ -11,6 +11,7 @@ import val_array
 import bubble_sort
 import selection_sort
 import insertion_sort
+import quick_sort
 
 
 class TestDSA(unittest.TestCase):
@@ -121,6 +122,19 @@ class TestDSA(unittest.TestCase):
     def test_insertion_sort_rev(self):
         self.assertEqual(
             insertion_sort.insertion_sort_shift(self.dscd_array.copy()),
+            self.ascd_array
+        )
+
+    # d. quick sort
+    def test_quick_sort(self):
+        self.assertEqual(
+            quick_sort.quick_sort(self.test_array.copy()),
+            self.ascd_array
+        )
+
+    def test_quick_sort_rev(self):
+        self.assertEqual(
+            quick_sort.quick_sort(self.dscd_array.copy()),
             self.ascd_array
         )
 
