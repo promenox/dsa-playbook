@@ -84,7 +84,7 @@ def quick_sort_typeB(nums):
         if l_idx >= r_idx:
             break
 
-        # swap items 
+        # swap items
         # < piv -> left
         # > piv -> right
         nums[l_idx], nums[r_idx] = nums[r_idx], nums[l_idx]
@@ -109,5 +109,5 @@ personal takeaweays:
     2. managing dupicate forms of a pivot are essential.
     3. placing the midpoint back is important.
     2. recursvie thinking is essential for the sub arrays.
-    3. base cases are needed to terminate the recursion. 
+    3. base cases are needed to terminate the recursion.
 '''
