@@ -46,8 +46,12 @@ class TestDSA(unittest.TestCase):
 
     # -- testing array sorting --
 
-    # test array
+    # test arrays
     test_array = [5, 1, 4, 2, 3]
+    test_array_2 = [3, 1, 1, 1, 1]
+
+    # result arrays
+    dupl_array = [1, 1, 1, 1, 3]
     ascd_array = [1, 2, 3, 4, 5]
     dscd_array = [5, 4, 3, 2, 1]
 
@@ -126,16 +130,42 @@ class TestDSA(unittest.TestCase):
         )
 
     # d. quick sort
-    def test_quick_sort(self):
+    # recursive type A
+    def test_quick_sort_typeA(self):
         self.assertEqual(
-            quick_sort.quick_sort(self.test_array.copy()),
+            quick_sort.quick_sort_typeA(self.test_array.copy()),
             self.ascd_array
         )
 
-    def test_quick_sort_rev(self):
+    def test_quick_sort_typeA_rev(self):
         self.assertEqual(
-            quick_sort.quick_sort(self.dscd_array.copy()),
+            quick_sort.quick_sort_typeA(self.dscd_array.copy()),
             self.ascd_array
+        )
+
+    def test_quick_sort_typeA_dup(self):
+        self.assertEqual(
+            quick_sort.quick_sort_typeA(self.dupl_array.copy()),
+            self.dupl_array
+        )
+
+    # recursive type B
+    def test_quick_sort_typeB(self):
+        self.assertEqual(
+            quick_sort.quick_sort_typeB(self.test_array.copy()),
+            self.ascd_array
+        )
+
+    def test_quick_sort_typeB_rev(self):
+        self.assertEqual(
+            quick_sort.quick_sort_typeB(self.dscd_array.copy()),
+            self.ascd_array
+        )
+
+    def test_quick_sort_typeB_dup(self):
+        self.assertEqual(
+            quick_sort.quick_sort_typeB(self.dupl_array.copy()),
+            self.dupl_array
         )
 
 
