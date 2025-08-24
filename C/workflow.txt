@@ -1,1 +1,3 @@
-$ gcc hello_world.c -o ./out/hello_world
+gcc hello_world.c -o ./out/hello_world
+
+gcc src/*.c tests/test_cases.c -o build/test_cases -IC:/msys64/mingw64/include -LC:/msys64/mingw64/lib -lcunit

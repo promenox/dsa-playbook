@@ -9,8 +9,3 @@ int fibonacci(int n) {
         }
         return fibonacci(n-2) + fibonacci(n-1);
     }
-
-int main() {
-    printf("%i", fibonacci(9));
-    return 0;
-}
