@@ -16,7 +16,7 @@ import quick_sort
 
 # [B] data structures
 # 1) stack and queue
-from stack import Stack
+from stack import Stack, ManualStack
 
 
 class BaseDSASetup(unittest.TestCase):
@@ -222,8 +222,11 @@ class TestQuickSort(BaseDSASetup):
 
 class TestStack(unittest.TestCase):
     def setUp(self):
-        self.test_stack = Stack([])   # new stack for each test
+        # new stack for each test
+        self.test_stack = Stack([])
+        self.test_manual_stack = ManualStack(10)
 
+    # built-in methods
     def test_1stack_isEmpty_true(self):
         self.assertTrue(self.test_stack.isEmpty())
 
@@ -245,6 +248,29 @@ class TestStack(unittest.TestCase):
         self.test_stack.push('A')
         self.test_stack.push('B')
         self.assertEqual(self.test_stack.size(), 2)
+
+    # not using built-in methods
+    def test_1manualStack_isEmpty_true(self):
+        self.assertTrue(self.test_manual_stack.isEmpty())
+
+    def test_2manualStack_isEmpty_false(self):
+        self.test_manual_stack.push('A')
+        self.assertFalse(self.test_manual_stack.isEmpty())
+
+    def test_3manualStack_peek(self):
+        self.test_manual_stack.push('A')
+        self.test_manual_stack.push('B')
+        self.assertEqual(self.test_manual_stack.peek(), 'B')
+
+    def test_4manualStack_pop(self):
+        self.test_manual_stack.push('A')
+        self.test_manual_stack.push('B')
+        self.assertEqual(self.test_manual_stack.pop(), 'B')
+
+    def test_5manualStack_size(self):
+        self.test_manual_stack.push('A')
+        self.test_manual_stack.push('B')
+        self.assertEqual(self.test_manual_stack.size(), 2)
 
 
 if __name__ == "__main__":
