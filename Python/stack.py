@@ -19,3 +19,9 @@ class Stack:
 
     def size(self):
         return len(self.stack)
+
+# making a stack without built-ins
+
+
+class ManualStack:
+    pass
