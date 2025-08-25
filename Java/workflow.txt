@@ -1,6 +1,15 @@
--- compile the byte code --
-$ javac HelloWorld.java
+-----------------------------------------
+TYPICAL WORKFLOW (Java)
+-----------------------------------------
 
--- run the byte code --
-$ java HelloWorld
-Hello, world!
+1. Clean previous builds:
+   $ make clean
+
+2. Compile the bytecode into the build directory:
+   $ make build
+
+3. Run the program:
+   $ make run
+
+4. Rebuild and run in one step:
+   $ make clean run
