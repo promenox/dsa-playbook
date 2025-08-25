@@ -1,3 +1,22 @@
-gcc hello_world.c -o ./out/hello_world
+MAKE COMMANDS — TYPICAL WORKFLOW
+=================================
 
-gcc src/*.c tests/test_cases.c -o build/test_cases -IC:/msys64/mingw64/include -LC:/msys64/mingw64/lib -lcunit
+1. Clean previous builds
+   - Deletes all compiled files (.o, .exe) and the build directory.
+   - Command:
+     $ make clean
+
+2. Build the project
+   - Compiles all source files into object files and links them into the executable.
+   - Command:
+     $ make
+
+3. Run the program
+   - Builds the project if needed, then executes the compiled program.
+   - Command:
+     $ make run
+
+4. Rebuild the project and run
+   - Cleans old build files, compiles everything from scratch, and runs the program.
+   - Command:
+     $ make clean run
