@@ -1,0 +1,6 @@
+-- compile the byte code --
+$ javac HelloWorld.java
+
+-- run the byte code --
+$ java HelloWorld
+Hello, world!
