@@ -24,4 +24,15 @@ class Stack:
 
 
 class ManualStack:
-    pass
+    def __init__(self, capacity):
+        self.stack = [None] * capacity
+        self.top = 0
+
+    def isEmpty(self):
+        return self.top == 0
+
+    def push(self, value):
+        if self.top + value >= self.capacity:
+            return -1
+            print("stack overflow")
+        self.stack
