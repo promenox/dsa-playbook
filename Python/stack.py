@@ -25,14 +25,35 @@ class Stack:
 
 class ManualStack:
     def __init__(self, capacity):
+        # list items are the same fixed size and given by cap
         self.stack = [None] * capacity
-        self.top = 0
+        self.capacity = capacity
+        self.top = -1
+        # Notes: try an arb bytes workflow in C
 
     def isEmpty(self):
-        return self.top == 0
+        return self.top == -1
 
     def push(self, value):
-        if self.top + value >= self.capacity:
-            return -1
-            print("stack overflow")
-        self.stack
+        # check avalible space
+        if self.capacity <= self.top:
+            raise OverflowError("Stack is Full")
+        # store value and increment pointer
+        self.top += 1
+        self.stack[self.top] = value
+
+    def pop(self):
+        if self.isEmpty():
+            raise IndexError("Pop on Empty Stack")
+        val = self.stack[self.top]
+        self.stack[self.top] = None
+        self.top -= 1
+        return val
+
+    def peek(self):
+        if self.isEmpty():
+            raise IndexError("Peek on Empty Stack")
+        return self.stack[self.top]
+
+    def size(self):
+        return self.top + 1
