@@ -224,7 +224,7 @@ class TestStack(unittest.TestCase):
     def setUp(self):
         # new stack for each test
         self.test_stack = Stack([])
-        self.test_manual_stack = ManualStack(10)
+        self.test_manual_stack = ManualStack(3)
 
     # built-in methods
     def test_1stack_isEmpty_true(self):
@@ -250,6 +250,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(self.test_stack.size(), 2)
 
     # not using built-in methods
+    # will try bytes based approach in C
     def test_1manualStack_isEmpty_true(self):
         self.assertTrue(self.test_manual_stack.isEmpty())
 
@@ -271,6 +272,30 @@ class TestStack(unittest.TestCase):
         self.test_manual_stack.push('A')
         self.test_manual_stack.push('B')
         self.assertEqual(self.test_manual_stack.size(), 2)
+
+    def test_6manualStack_errorChecks(self):
+        # error check pop empty stack
+        with self.assertRaises(IndexError) as cm:
+            self.test_manual_stack.pop()
+
+        self.assertEqual(str(cm.exception), "Pop on Empty Stack")
+
+        # error check peek empty stack
+        with self.assertRaises(IndexError) as cm:
+            self.test_manual_stack.peek()
+
+        self.assertEqual(str(cm.exception), "Peek on Empty Stack")
+
+        # push to the maximum defined cap of 3
+        self.test_manual_stack.push('A')
+        self.test_manual_stack.push('B')
+        self.test_manual_stack.push('C')
+
+        # error check push on full stack
+        with self.assertRaises(OverflowError) as cm:
+            self.test_manual_stack.push('D')
+
+        self.assertEqual(str(cm.exception), "Stack is Full")
 
 
 if __name__ == "__main__":

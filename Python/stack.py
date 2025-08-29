@@ -36,7 +36,7 @@ class ManualStack:
 
     def push(self, value):
         # check avalible space
-        if self.capacity <= self.top:
+        if self.top + 1 >= self.capacity:
             raise OverflowError("Stack is Full")
         # store value and increment pointer
         self.top += 1
