@@ -3,7 +3,6 @@
 class Stack:
     def __init__(self, vals):
         self.stack = vals
-        print(len(self.stack) == 0)
 
     def isEmpty(self):
         return len(self.stack) == 0
@@ -12,9 +11,15 @@ class Stack:
         self.stack.append(val)
 
     def pop(self):
+        if self.isEmpty():
+            print("Stack is Empty")
+            return -1
         return self.stack.pop()
 
     def peek(self):
+        if self.isEmpty():
+            print("Stack is Empty")
+            return -1
         return self.stack[-1]
 
     def size(self):
