@@ -17,6 +17,7 @@ import quick_sort
 # [B] data structures
 # 1) stack and queue
 from stack import Stack, ManualStack
+from queue import Queue
 
 
 class BaseDSASetup(unittest.TestCase):
@@ -223,31 +224,31 @@ class TestQuickSort(BaseDSASetup):
 class TestStack(unittest.TestCase):
     def setUp(self):
         # new stack for each test
-        self.test_stack = Stack([])
+        self.test_queue = Stack([])
         self.test_manual_stack = ManualStack(3)
 
     # built-in methods
     def test_1stack_isEmpty_true(self):
-        self.assertTrue(self.test_stack.isEmpty())
+        self.assertTrue(self.test_queue.isEmpty())
 
     def test_2stack_isEmpty_false(self):
-        self.test_stack.push('A')
-        self.assertFalse(self.test_stack.isEmpty())
+        self.test_queue.push('A')
+        self.assertFalse(self.test_queue.isEmpty())
 
     def test_3stack_peek(self):
-        self.test_stack.push('A')
-        self.test_stack.push('B')
-        self.assertEqual(self.test_stack.peek(), 'B')
+        self.test_queue.push('A')
+        self.test_queue.push('B')
+        self.assertEqual(self.test_queue.peek(), 'B')
 
     def test_4stack_pop(self):
-        self.test_stack.push('A')
-        self.test_stack.push('B')
-        self.assertEqual(self.test_stack.pop(), 'B')
+        self.test_queue.push('A')
+        self.test_queue.push('B')
+        self.assertEqual(self.test_queue.pop(), 'B')
 
     def test_5stack_size(self):
-        self.test_stack.push('A')
-        self.test_stack.push('B')
-        self.assertEqual(self.test_stack.size(), 2)
+        self.test_queue.push('A')
+        self.test_queue.push('B')
+        self.assertEqual(self.test_queue.size(), 2)
 
     # not using built-in methods
     # will try bytes based approach in C
@@ -296,6 +297,47 @@ class TestStack(unittest.TestCase):
             self.test_manual_stack.push('D')
 
         self.assertEqual(str(cm.exception), "Stack is Full")
+
+
+class TestQueue(unittest.TestCase):
+    def setUp(self):
+        # new stack for each test
+        self.test_queue = Queue([])
+        # self.test_manual_stack = ManualQueue(3)
+
+    # built-in methods
+    def test_1queue_isEmpty_true(self):
+        self.assertTrue(self.test_queue.isEmpty())
+
+    def test_2stack_isEmpty_false(self):
+        self.test_queue.enqueue('A')
+        self.assertFalse(self.test_queue.isEmpty())
+
+    def test_3stack_peek(self):
+        self.test_queue.enqueue('A')
+        self.test_queue.enqueue('B')
+        self.assertEqual(self.test_queue.peek(), 'A')
+
+    def test_4stack_dequeue(self):
+        self.test_queue.enqueue('A')
+        self.test_queue.enqueue('B')
+        self.assertEqual(self.test_queue.dequeue(), 'A')
+
+    def test_5stack_size(self):
+        self.test_queue.enqueue('A')
+        self.test_queue.enqueue('B')
+        self.assertEqual(self.test_queue.size(), 2)
+
+    def test_dequeue_until_empty(self):
+        items = ['A', 'B', 'C']
+        for item in items:
+            self.test_queue.enqueue(item)
+        
+        for item in items:
+            self.assertEqual(self.test_queue.dequeue(), item)
+        
+        self.assertTrue(self.test_queue.isEmpty())
+        self.assertEqual(self.test_queue.dequeue(), -1)  # dequeue from empty
 
 
 if __name__ == "__main__":

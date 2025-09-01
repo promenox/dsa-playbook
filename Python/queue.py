@@ -12,7 +12,7 @@ class Queue:
         if self.isEmpty():
             print("Queue is Empty")
             return -1
-        return self.queue.remove(0)
+        return self.queue.pop(0)
 
     def peek(self):
         if self.isEmpty():
