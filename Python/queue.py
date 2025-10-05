@@ -1,5 +1,5 @@
 class Queue:
-    def __init__(self, vals):
+    def __init__(self, vals=[]):
         self.queue = vals
 
     def isEmpty(self):

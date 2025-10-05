@@ -1,7 +1,7 @@
 # stack ds
 
 class Stack:
-    def __init__(self, vals):
+    def __init__(self, vals=[]):
         self.stack = vals
 
     def isEmpty(self):
