@@ -77,5 +77,8 @@ def dfs_search(tree, start, goal):
     
     return reconstruct_path(parent, start, goal)
 
-print(bfs_search(tree, 'S', 'G'))
-print(dfs_search(tree, 'S', 'G'))
+print("\n----BFS----\n")
+print(bfs_search(tree, 'S', 'G'), "\n")
+
+print("\n----DFS----\n")
+print(dfs_search(tree, 'S', 'G'), "\n")

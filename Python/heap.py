@@ -88,6 +88,8 @@ class MaxHeap(Heap):
             self.nodes[idx], self.nodes[largest] = self.nodes[largest], self.nodes[idx]
             self.max_heapify(largest)
 
+# implement a min heap setup ...
+
 # jury-rigged test bed
 arr = [3, 1, 2, 8]
 max_heap = MaxHeap(arr)
