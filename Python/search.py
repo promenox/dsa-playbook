@@ -26,14 +26,14 @@ def bfs_search(tree, start, goal):
     idx = 0
 
     while True:
-        
-        print(f"idx:{idx}\nclosed:\t{closed_set}\nopen:\t{open_set.queue}\n")
 
         if (open_set.isEmpty()):
             break
         
         node = open_set.dequeue()
         closed_set.append(node)
+
+        print(f"idx:{idx}\nclosed:\t{closed_set}\nopen:\t{open_set.queue}\n")
 
         if node == 'G':
             break
@@ -56,14 +56,14 @@ def dfs_search(tree, start, goal):
     idx = 0
 
     while True:
-        
-        print(f"idx:{idx}\nclosed:\t{closed_set}\nopen:\t{open_set.stack}\n")
 
         if (open_set.isEmpty()):
             break
         
         node = open_set.pop()
         closed_set.append(node)
+
+        print(f"idx:{idx}\nclosed:\t{closed_set}\nopen:\t{open_set.stack}\n")
 
         if node == 'G':
             break
